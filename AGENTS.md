@@ -352,3 +352,7 @@ ALWAYS invoke the matching skill **first** — do not skip it, and do not attemp
 - `/auditing-llm-gateway-parity` — changing either gateway's auth, attribution, billing, endpoints, providers, models, routing, or metadata contract; reviewing a `services/llm-gateway` change; or refreshing `services/llm-gateway/PARITY.md`
 - `/finding-llm-gateway-migration-candidates` — finding, auditing, or ranking callers that could move from `services/llm-gateway` to `PostHog/ai-gateway`, including requests for the next or lowest-risk migration candidate
 - `/migrating-llm-gateway-callers` — adding an LLM gateway caller or migrating an existing caller from `services/llm-gateway` to `PostHog/ai-gateway`, including shared client and gateway setting changes made for that migration
+
+## Log Explorer adapter conventions
+
+For new capabilities, functions, pages, REST/MCP interfaces or event adapters, read [Log Explorer integration conventions](LOG-EXPLORER-INTEGRATION.md). It defines outcome semantics, verified context, current disclosure checks and source-specific exclusions. Documentation is not a live feed or release receipt.
