@@ -1,6 +1,6 @@
 # Log Explorer integration conventions
 
-Version 1. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
+Version 2. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
 
 ## Capability descriptions
 
@@ -52,3 +52,30 @@ This document installs no collector, grants access to no source and changes no r
 ## Owning-source boundary
 
 Keep provider instance, project, producer environment and application distinct. SDK distinct IDs and browser sessions are observations rather than authorization principals. Recording access and capture consent are independent.
+
+## Shared contract and packaged context
+
+Use the [reviewed shared contract](https://github.com/plaura-xp/astro-craft/blob/dfc6df64888169faff7b60cdee6f2d97610da07d/docs/architecture/capability-event-presentation.md) with this repository's source boundary.
+Qualify each source and environment separately.
+
+Package the guarded handler, route alias, page/workflow identity and source descriptors together.
+Publish the path, version and digest of the manifest the host actually selects.
+Keep REST and MCP descriptions tied to the same semantic operation.
+Preserve other page bindings and existing access-profile declarations.
+Test the packaged page and direct API/tool authorization paths.
+Source declarations alone do not prove that the delivered adapter contains its metadata.
+
+## Bounded collections and live views
+
+The current explorer uses a seven-day window and a 1,000-event collection ceiling.
+Return bounded results with visible truncation instead of implying that the whole source was inspected.
+Report exact totals only from the same authorized snapshot when it is not clipped.
+Use lower bounds elsewhere and leave unmeasured totals unknown.
+Keep ceiling omissions separate from upstream loss, unparsed records, deletion and late arrival.
+Only authorized rows may contribute to counts or a truncation sentinel.
+Recheck authority before releasing counts and clear them with private records on revocation.
+
+Keep view state and selection through layout and collection changes.
+Ordinary selection preserves the wider context; explicit Follow narrows it.
+Temporary canvas changes create no notebook records.
+Fullscreen Escape must restore focus and preserve modal/menu precedence, including a focused notebook frame.
