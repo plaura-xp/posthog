@@ -1,6 +1,6 @@
 # Log Explorer integration conventions
 
-Version 2. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
+Version 3. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
 
 ## Capability descriptions
 
@@ -55,7 +55,7 @@ Keep provider instance, project, producer environment and application distinct. 
 
 ## Shared contract and packaged context
 
-Use the [reviewed shared contract](https://github.com/plaura-xp/astro-craft/blob/dfc6df64888169faff7b60cdee6f2d97610da07d/docs/architecture/capability-event-presentation.md) with this repository's source boundary.
+Use the [reviewed shared contract](https://github.com/plaura-xp/astro-craft/blob/6dc5225ea5b7b69df387cbd0f21f545842f310b5/docs/architecture/capability-event-presentation.md) with this repository's source boundary.
 Qualify each source and environment separately.
 
 Package the guarded handler, route alias, page/workflow identity and source descriptors together.
@@ -79,3 +79,22 @@ Keep view state and selection through layout and collection changes.
 Ordinary selection preserves the wider context; explicit Follow narrows it.
 Temporary canvas changes create no notebook records.
 Fullscreen Escape must restore focus and preserve modal/menu precedence, including a focused notebook frame.
+
+## Verified delegation and precise Follow
+
+Keep the actual machine actor separate from the human who delegated its authority.
+A registration parent or storage owner is insufficient evidence of a current delegator or run controller.
+Only the owning API's successful current parent/delegation and final client-revision checks may attach `delegator_reference` with `delegation_basis: verified-parent-authority`.
+Independently authorized machines can have no current delegator recorded.
+Retain only a trusted same-environment pair; drop incomplete, malformed, untrusted or cross-environment claims before disclosure.
+Never put parent subjects, credentials or names into observation payloads.
+Delegation does not make the human the performer, broaden their My journey results or establish ownership, causality or Pluto context.
+Show the pair as explained source context in the original notebook; do not invent graph edges.
+The [owning reference contract](https://github.com/plaura-xp/mybyio/blob/2f191b85e37c381c970f43ac7141a068fd631a75/docs/specs/log-explorer-machine-delegation.md) separates source implementation from hosted producer activation.
+
+A rolling poll captures one exact UTC timestamp window and reuses it for every cursor page.
+Do not round source queries through minute-precision form displays.
+Refresh completion is distinct from measured source lag; an up-to-date query cannot prove that all earlier source events have arrived.
+Keep provider/browser sessions, token authentication and occurrence/receipt clocks distinct.
+
+This guidance adds no collector, API route, notebook mutation, access grant or production activation in this repository.
