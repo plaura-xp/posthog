@@ -1,6 +1,6 @@
 # Log Explorer integration conventions
 
-Version 3. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
+Version 4. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
 
 ## Capability descriptions
 
@@ -55,7 +55,7 @@ Keep provider instance, project, producer environment and application distinct. 
 
 ## Shared contract and packaged context
 
-Use the [reviewed shared contract](https://github.com/plaura-xp/astro-craft/blob/6dc5225ea5b7b69df387cbd0f21f545842f310b5/docs/architecture/capability-event-presentation.md) with this repository's source boundary.
+Use the [reviewed shared contract](https://github.com/plaura-xp/astro-craft/blob/51633c78b734e529b31c61963d936c69d337ade0/docs/architecture/capability-event-presentation.md) with this repository's source boundary.
 Qualify each source and environment separately.
 
 Package the guarded handler, route alias, page/workflow identity and source descriptors together.
@@ -98,3 +98,22 @@ Refresh completion is distinct from measured source lag; an up-to-date query can
 Keep provider/browser sessions, token authentication and occurrence/receipt clocks distinct.
 
 This guidance adds no collector, API route, notebook mutation, access grant or production activation in this repository.
+
+## Replay requests and capture lifetimes
+
+A selected event, Context router control or original canvas browser-session Source card may request playback through the [closed request interface](https://github.com/plaura-xp/astro-craft/blob/8e0ba88c2306cfb561907d55adb30947ef59acf5/Templates/astro-log-explorer/contracts/replay-request.v1.schema.json).
+Notify shared event selection before the explicit playback request, then recheck current source and independent recording authority in the owning host.
+Selection alone never opens playback or narrows the feed.
+Temporary browser-reference notes link recorded association only and establish no identity, ownership or causality.
+The actual player clock moves a presentation cursor; unrecorded gaps and time outside the current canvas page remain explicit.
+Clock movement creates no event/note, selects no nearest event and writes no notebook storage.
+
+Replay capture needs a separate explicit choice and a current owning-service permit for an approved non-sensitive surface.
+The [capture lifetime guard](https://github.com/plaura-xp/astro-craft/blob/51633c78b734e529b31c61963d936c69d337ade0/docs/architecture/log-explorer-replay-capture.md) remains unmounted source with no product surfaces or recorder SDK adapter registered.
+Do not enable it by inheriting ordinary analytics consent or log-read permission.
+Stop synchronously before route, DOM or account transitions; an observer after rendering cannot prove exclusion.
+Suspend before hidden/bfcache transitions and resume only after current session verification.
+Each recorder receives a send lease that stays revoked after replacement; withdrawal must discard buffered/unload dispatches.
+Respect DNT/GPC and clear the choice on account change.
+A short-lived capture permit cannot prove historical recording scope or authorize a viewer to read recordings.
+The actual pinned recorder, separate consent/policy owners, cross-window withdrawal, masking/exclusion canaries and consented provider playback require their own source and environment acceptance.
