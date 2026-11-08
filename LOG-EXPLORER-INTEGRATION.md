@@ -1,6 +1,6 @@
 # Log Explorer integration conventions
 
-Version 4. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
+Version 5. Applies to new capability, function, page, REST, MCP and event adapters in this fork.
 
 ## Capability descriptions
 
@@ -55,7 +55,7 @@ Keep provider instance, project, producer environment and application distinct. 
 
 ## Shared contract and packaged context
 
-Use the [reviewed shared contract](https://github.com/plaura-xp/astro-craft/blob/51633c78b734e529b31c61963d936c69d337ade0/docs/architecture/capability-event-presentation.md) with this repository's source boundary.
+Use the [reviewed shared contract](https://github.com/plaura-xp/astro-craft/blob/355cf9f/docs/architecture/capability-event-presentation.md) with this repository's source boundary.
 Qualify each source and environment separately.
 
 Package the guarded handler, route alias, page/workflow identity and source descriptors together.
@@ -117,3 +117,28 @@ Each recorder receives a send lease that stays revoked after replacement; withdr
 Respect DNT/GPC and clear the choice on account change.
 A short-lived capture permit cannot prove historical recording scope or authorize a viewer to read recordings.
 The actual pinned recorder, separate consent/policy owners, cross-window withdrawal, masking/exclusion canaries and consented provider playback require their own source and environment acceptance.
+
+
+## Reviewed journey context
+
+Bind each explanation to the recorded source and producer contract version.
+Explain sign-in, verification, enrollment and return outcomes in field help and the original notebook Source cards.
+A completed sign-in or redirect response does not prove the destination page rendered.
+Provider verification does not prove this request sent or consumed an email code.
+Unknown or unversioned events must show that a reviewed description is unavailable.
+
+A trusted archive adapter may add a reviewed version after validating the complete producer event.
+Keep the immutable queued payload, its hash and the provider request unchanged.
+Reject caller-supplied version fields before dispatch.
+Preserve first-write archive rows on retries and leave historical missing versions unresolved.
+The [MyByIO implementation](https://github.com/plaura-xp/mybyio/blob/ce5858a6/docs/mvp/SHARED_ANALYTICS.md#private-archive-contract-annotation) adds this marker only to the private archive projection.
+
+## Staging feed readiness
+
+The MyByIO staging reader implements six registered product projections.
+Cloud and Club collection remains unactivated and requires its owning authentication and consent storage acceptance.
+Gateway journey preparation does not register a first-value operation or browser observation capability.
+Qualify application, archive-writer and archive-reader rights separately, including cross-store, modification and destructive denials.
+Record controlled provider responses separately from actual ingestion, native identity, certificate setup and hosted journeys.
+Separate roles in one fixture database do not prove physical environment isolation.
+This guide changes no runtime, collector, grant, migration or deployment in this repository.
